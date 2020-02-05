@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace DoesItBlend
 {
     class Program
@@ -7,6 +7,21 @@ namespace DoesItBlend
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            var b = new Banana();
+            var m = new Mango();
+            var s = new Strawberry();
+            var c = new IceCubes();
+
+            Console.WriteLine(b.Blend());
+            Console.WriteLine(m.Blend());
+            Console.WriteLine(s.Blend());
+
+            List<IBlendables> fruits = new List<IBlendables>() { b, m, s, c };
+            foreach (dynamic fruit in fruits)
+            {
+                Console.WriteLine(fruit.Blend());
+            }
         }
     }
 }
